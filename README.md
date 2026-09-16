@@ -1,5 +1,7 @@
 # PineAPI
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 PineAPI is a lightweight C++ template-based math library for vectors, matrices, and tensors.
 
 It is designed to be easy to include in other C++ projects and to work as a header-driven library with minimal setup.
@@ -74,16 +76,6 @@ int main() {
 This project is licensed under the MIT License.
 
 The MIT license allows commercial use, modification, distribution, and private use, while requiring that the original copyright and license notice remain included in copies or substantial portions of the software.
-
-If you want a stronger requirement like "must credit us in marketing material or public docs," that would require a custom license rather than a standard open-source license.
-
-## Recommended licensing choice
-
-For your goal of open-source + attribution, the best standard option is:
-
-- MIT License
-
-It keeps the project open and usable commercially, while still requiring attribution and preserving your copyright.
 
 ## Contributing
 
