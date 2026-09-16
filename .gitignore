@@ -1,0 +1,33 @@
+# Build artifacts
+build/
+bin/
+obj/
+*.o
+*.out
+*.exe
+*.app
+*.a
+*.so
+*.dll
+*.dylib
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile.in
+CTestTestfile.cmake
+
+# Local test binaries
+/test_app
