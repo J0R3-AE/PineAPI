@@ -7,10 +7,7 @@
 namespace pine
 {
 
-template<typename T>
-pineVector<T>::pineVector() : m_size(0), m_data(nullptr)
-{
-}
+template<typename T> pineVector<T>::pineVector() : m_size(0), m_data(nullptr){}
 
 template<typename T>
 pineVector<T>::pineVector(std::size_t size) : m_size(size), m_data(nullptr)
@@ -61,32 +58,11 @@ pineVector<T>& pineVector<T>::operator=(const pineVector& other)
     return *this;
 }
 
-template<typename T>
-pineVector<T>::~pineVector() = default;
-
-template<typename T>
-std::size_t pineVector<T>::size() const
-{
-    return m_size;
-}
-
-template<typename T>
-bool pineVector<T>::empty() const
-{
-    return m_size == 0;
-}
-
-template<typename T>
-T* pineVector<T>::data()
-{
-    return m_data.get();
-}
-
-template<typename T>
-const T* pineVector<T>::data() const
-{
-    return m_data.get();
-}
+template<typename T> pineVector<T>::~pineVector() = default;
+template<typename T> std::size_t pineVector<T>::size() const { return m_size; }
+template<typename T> bool pineVector<T>::empty() const { return m_size == 0;}
+template<typename T> T* pineVector<T>::data() { return m_data.get(); }
+template<typename T> const T* pineVector<T>::data() const { return m_data.get();}
 
 template<typename T>
 T& pineVector<T>::at(std::size_t index)
@@ -106,17 +82,8 @@ const T& pineVector<T>::at(std::size_t index) const
     return m_data[index];
 }
 
-template<typename T>
-T& pineVector<T>::operator[](std::size_t index)
-{
-    return at(index);
-}
-
-template<typename T>
-const T& pineVector<T>::operator[](std::size_t index) const
-{
-    return at(index);
-}
+template<typename T> T& pineVector<T>::operator[](std::size_t index) { return at(index); }
+template<typename T> const T& pineVector<T>::operator[](std::size_t index) const { return at(index); }
 
 template<typename T>
 void pineVector<T>::resize(std::size_t size)

@@ -7,8 +7,7 @@
 namespace pine
 {
 
-template<typename T>
-pineMatrix<T>::pineMatrix() : m_rows(0), m_columns(0), m_size(0), m_data(nullptr){}
+template<typename T> pineMatrix<T>::pineMatrix() : m_rows(0), m_columns(0), m_size(0), m_data(nullptr){}
 
 template<typename T>
 pineMatrix<T>::pineMatrix(std::size_t rows, std::size_t columns)
@@ -102,44 +101,13 @@ pineMatrix<T>& pineMatrix<T>::operator=(const pineMatrix& other)
     return *this;
 }
 
-template<typename T>
-pineMatrix<T>::~pineMatrix() = default;
-
-template<typename T>
-std::size_t pineMatrix<T>::rows() const
-{
-    return m_rows;
-}
-
-template<typename T>
-std::size_t pineMatrix<T>::columns() const
-{
-    return m_columns;
-}
-
-template<typename T>
-std::size_t pineMatrix<T>::size() const
-{
-    return m_size;
-}
-
-template<typename T>
-bool pineMatrix<T>::empty() const
-{
-    return m_size == 0;
-}
-
-template<typename T>
-T* pineMatrix<T>::data()
-{
-    return m_data.get();
-}
-
-template<typename T>
-const T* pineMatrix<T>::data() const
-{
-    return m_data.get();
-}
+template<typename T> pineMatrix<T>::~pineMatrix() = default;
+template<typename T> std::size_t pineMatrix<T>::rows() const { return m_rows; }
+template<typename T> std::size_t pineMatrix<T>::columns() const { return m_columns; }
+template<typename T> std::size_t pineMatrix<T>::size() const { return m_size; }
+template<typename T> bool pineMatrix<T>::empty() const { return m_size == 0; }
+template<typename T> T* pineMatrix<T>::data() { return m_data.get(); }
+template<typename T> const T* pineMatrix<T>::data() const { return m_data.get(); }
 
 template<typename T>
 std::size_t pineMatrix<T>::index(std::size_t row, std::size_t column) const
@@ -150,29 +118,10 @@ std::size_t pineMatrix<T>::index(std::size_t row, std::size_t column) const
     return row * m_columns + column;
 }
 
-template<typename T>
-T& pineMatrix<T>::at(std::size_t row, std::size_t column)
-{
-    return m_data[index(row, column)];
-}
-
-template<typename T>
-const T& pineMatrix<T>::at(std::size_t row, std::size_t column) const
-{
-    return m_data[index(row, column)];
-}
-
-template<typename T>
-T& pineMatrix<T>::operator()(std::size_t row, std::size_t column)
-{
-    return at(row, column);
-}
-
-template<typename T>
-const T& pineMatrix<T>::operator()(std::size_t row, std::size_t column) const
-{
-    return at(row, column);
-}
+template<typename T> T& pineMatrix<T>::at(std::size_t row, std::size_t column) { return m_data[index(row, column)]; }
+template<typename T> T& pineMatrix<T>::operator()(std::size_t row, std::size_t column) { return at(row, column); }
+template<typename T> const T& pineMatrix<T>::at(std::size_t row, std::size_t column) const { return m_data[index(row, column)]; }
+template<typename T> const T& pineMatrix<T>::operator()(std::size_t row, std::size_t column) const { return at(row, column); }
 
 template<typename T>
 void pineMatrix<T>::resize(std::size_t rows, std::size_t columns)

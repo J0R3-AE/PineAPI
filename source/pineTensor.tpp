@@ -7,10 +7,7 @@
 namespace pine
 {
 
-template<typename T>
-pineTensor<T>::pineTensor() : m_rows(0), m_columns(0), m_depth(0), m_size(0), m_data(nullptr)
-{
-}
+template<typename T> pineTensor<T>::pineTensor() : m_rows(0), m_columns(0), m_depth(0), m_size(0), m_data(nullptr){}
 
 template<typename T>
 pineTensor<T>::pineTensor(std::size_t rows, std::size_t columns, std::size_t depth)
@@ -100,50 +97,14 @@ pineTensor<T>& pineTensor<T>::operator=(const pineTensor& other)
     return *this;
 }
 
-template<typename T>
-pineTensor<T>::~pineTensor() = default;
-
-template<typename T>
-std::size_t pineTensor<T>::rows() const
-{
-    return m_rows;
-}
-
-template<typename T>
-std::size_t pineTensor<T>::columns() const
-{
-    return m_columns;
-}
-
-template<typename T>
-std::size_t pineTensor<T>::depth() const
-{
-    return m_depth;
-}
-
-template<typename T>
-std::size_t pineTensor<T>::size() const
-{
-    return m_size;
-}
-
-template<typename T>
-bool pineTensor<T>::empty() const
-{
-    return m_size == 0;
-}
-
-template<typename T>
-T* pineTensor<T>::data()
-{
-    return m_data.get();
-}
-
-template<typename T>
-const T* pineTensor<T>::data() const
-{
-    return m_data.get();
-}
+template<typename T> pineTensor<T>::~pineTensor() = default;
+template<typename T> std::size_t pineTensor<T>::rows() const { return m_rows; }
+template<typename T> std::size_t pineTensor<T>::columns() const { return m_columns; }
+template<typename T> std::size_t pineTensor<T>::depth() const { return m_depth; }
+template<typename T> std::size_t pineTensor<T>::size() const { return m_size; }
+template<typename T> bool pineTensor<T>::empty() const { return m_size == 0; }
+template<typename T> T* pineTensor<T>::data() { return m_data.get(); }
+template<typename T> const T* pineTensor<T>::data() const { return m_data.get(); }
 
 template<typename T>
 std::size_t pineTensor<T>::index(std::size_t row, std::size_t column, std::size_t depthIndex) const
