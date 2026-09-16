@@ -1,3 +1,12 @@
+/**
+ * @file pineVector.hpp
+ * @brief Dense vector container and core linear algebra operations.
+ * @author J0R3-AE
+ * @version 1.0
+ * @copyright Copyright (c) 2026 J0R3-AE
+ * @date 2026-09-16
+ */
+
 #pragma once
 
 #include <cstddef>
